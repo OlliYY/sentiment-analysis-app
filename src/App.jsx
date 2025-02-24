@@ -5,7 +5,7 @@ function App() {
   const [result, setResult] = useState(null);
 
   const analyzeSentiment = async () => {
-    const response = await fetch("http://127.0.0.1:5000/analyze", {
+    const response = await fetch("https://your-flask-api.onrender.com/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -13,6 +13,7 @@ function App() {
     const data = await response.json();
     setResult(data.sentiment);
   };
+  
 
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
