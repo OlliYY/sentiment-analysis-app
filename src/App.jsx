@@ -5,14 +5,17 @@ function App() {
   const [result, setResult] = useState(null);
 
   const analyzeSentiment = async () => {
-    const response = await fetch("https://your-flask-api.onrender.com/analyze", {
+    const response = await fetch("https://sentiment-analysis-api-zql8.onrender.com/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
+      mode: "cors",
     });
+  
     const data = await response.json();
     setResult(data.sentiment);
   };
+  
   
 
   return (
