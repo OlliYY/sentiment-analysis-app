@@ -5,7 +5,7 @@ function App() {
   const [result, setResult] = useState(null);
 
   const analyzeSentiment = async () => {
-    const response = await fetch("https://sentiment-analysis-api-zql8.onrender.com/analyze", {
+    const response = await fetch("https://sentiment-analysis-backend-git-sentiment-analysis1.2.rahtiapp.fi/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
